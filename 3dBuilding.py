@@ -71,7 +71,7 @@ i = 0
 for coord in coords:
     X = [coord[0], coord[0]]
     Y = [coord[1], coord[1]]
-    Z = [0,150]
+    Z = [0,150] 
 
     # if i%4 == 0:
     #     ax.plot(X, Y, Z, label = "black", color = "black")
