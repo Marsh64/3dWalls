@@ -119,6 +119,8 @@ print("Finish")
 
 for i in range(1, len(coords) - 1, 2):
     coord1 = coords[i] #здесь находятся координаты по x и по y пикселей с самми темными цветами - [x, y]
+    thisline = coord1[0]
+    walllen = 0
     for j in range(1, len(coords) - 1, 2):
         coord2 = coords[j]
         coord3 = coords[j+1]
@@ -127,8 +129,16 @@ for i in range(1, len(coords) - 1, 2):
         if (coordCoincidence(coord1,coord2) and (coordCoincidence(coord1,coord3) or coordCoincidence(coord1,coord4))):
             continue
             
+       if(coord2[0] == thisline and coord3[0] == thisline):
+            walllen += 1
+       if(coord2[0] == thisline and coord3[0] != thisline):
+            if(coord2[0] - thisline == S):
+                walllen = 0
+                ax.plot(coord1[0], coord2[0], coord1[1], coord2[1], Y, label="white", color="purple")
                 
-        if ((coord1[1] != coord3[1]) and (coord1[0] == coord2[0] == coord3[0])):
+       
+    
+        
 
 
 
